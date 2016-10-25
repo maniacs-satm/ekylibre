@@ -51,6 +51,18 @@ class PlantCounting < Ekylibre::Record::Base
 
   accepts_nested_attributes_for :items
 
+  def number
+    1234
+  end
+
+  def sampling_area
+    1
+  end
+
+  def product_net_surface_area
+    1
+  end
+
   before_validation do
     if plant_density_abacus_item
       self.plant_density_abacus = plant_density_abacus_item.plant_density_abacus

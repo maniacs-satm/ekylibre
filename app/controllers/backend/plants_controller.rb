@@ -32,5 +32,13 @@ module Backend
       t.column :born_at
       t.column :dead_at
     end
+
+    list(:plant_countings, conditions: { plant_id: 'params[:id]'.c }, order: { read_at: :desc }) do |t|
+      t.action :edit
+      t.action :destroy
+      t.column :number, url: true
+      t.column :read_at
+      t.column :comment
+    end
   end
 end
